@@ -15,7 +15,8 @@ public class Wood : MonoBehaviour
             VisualObject.GetComponent<Renderer>().material.mainTexture = Test.Instance.MatSecond;
             Touched = true;
         }
-        Vector3 scale= transform.localScale / 1.01f;
+        Vector3 scale= transform.localScale / (1.04f);
+        scale.y = scale.y < 0 ? 0 : scale.y;
         scale.y = transform.localScale.y;
         transform.localScale = scale;
 

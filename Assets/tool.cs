@@ -5,7 +5,6 @@ using System.Linq;
 
 public class tool : MonoBehaviour
 {
-
     private void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -16,9 +15,6 @@ public class tool : MonoBehaviour
   
     private void OnTriggerStay2D(Collider2D _collision)
     {
-
-        
-
         if (_collision.transform.CompareTag("wood"))
         {
             _collision.GetComponent<Wood>().TouchMe();

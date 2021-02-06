@@ -28,23 +28,23 @@ public class Test : MonoBehaviour
     {
         Vector3 start = Vector3.zero;
 
-        for (int i = 0; i < 400; i++)
+        for (int i = 0; i < 200; i++)
         {
             GameObject createdVisual = Instantiate(WoodVisual, start, Quaternion.Euler(0, 0, 90));
             GameObject created = Instantiate(WoodReal, start, Quaternion.Euler(0, 0, 90));
             created.GetComponent<Wood>().VisualObject = createdVisual.transform;
             start.x += created.transform.localScale.y;
-            createdVisual.GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0,(i * (1f / 400f)));
+            createdVisual.GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0,(i * (1f / 200)));
             createdVisual.transform.SetParent(WoodMachine);
         }
         start = Vector3.zero;
-        for (int i = 0; i < 400; i++)
+        for (int i = 0; i < 200; i++)
         {
             GameObject createdVisual = Instantiate(WoodVisual, start, Quaternion.Euler(0, 0, 90));
             GameObject created = Instantiate(WoodReal, start, Quaternion.Euler(0, 0, 90));
             created.GetComponent<Wood>().VisualObject = createdVisual.transform;
             start.x -= created.transform.localScale.y;
-            createdVisual.GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0, (i * (1f / 400f)));
+            createdVisual.GetComponent<Renderer>().material.mainTextureOffset += new Vector2(0, (i * (1f / 200)));
             createdVisual.transform.SetParent(WoodMachine);
         }
     }
